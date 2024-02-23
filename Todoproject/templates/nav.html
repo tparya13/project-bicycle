@@ -1,0 +1,152 @@
+
+
+
+
+<!-- <nav class="navbar bg-light bg-dark">
+  <div class="container-fluid">
+    
+
+
+    <form class="d-flex" role="search"  action="{% url 'searchapp:searchproduct' %}" method="GET">
+      <input class="form-control me-2 mt-4 "name="q" type="search" style="margin-left: 750px;" placeholder="Search" aria-label="Search">
+      <img class="search mt-4" src="../static/images/search12.png" width="40" style="color: white;" alt="">
+      <a class="pt-4" href="" style="padding-left: 640px;"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="yellow" d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg></a>
+   
+     
+    </form>
+    {% if user.is_authenticated %}
+
+    <span class="text-light">{{user}}</span> 
+  <li class="nav-item ">
+    <a class="nav-link nav-signup btn btn-light mb-lg-0 mb-2 " href="{% url 'auth:logout' %}"><b>Logout</b></a>
+  </li>
+
+  {% else %}
+  <li class="nav-item ">
+    <a class="nav-link nav-signup btn btn-light ps-2 pe-2 px-2 py-2 pt-1" style="margin-left: 530px; " href="{% url 'auth:register' %}"><b>Sign up</b></a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-bttn btn btn-light mt-4" style="margin-right: 100px;" href="{% url 'auth:login' %}"><b>Log
+        in</b></a>
+  </li>
+  {% endif %}
+    
+  </div>
+</nav>
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg bg-secondary">
+<div class="container-fluid">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{% url 'shop:home' %}">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          category
+        </a>
+
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{% url 'shop:home' %}">All Product</a></li>
+
+          {% for link in links %}
+          <li><a class="dropdown-item" href="{{link.get_url}}">{{link.name}}</a></li>
+
+          {% endfor %}
+
+        </ul>
+
+       
+        
+
+
+      </li>
+
+    </ul>
+    
+
+
+  </div>
+</div>
+</nav>
+ -->
+
+
+
+
+
+
+ {% load static %}
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="container-fluid">
+     <a class="navbar-brand" href="#"></a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="{% url 'shop:home' %}"><h1>MAPLEWOOD</h1></a>
+                     
+           <div>
+             <button type="" class="btn btn-danger" style="margin-left: 40px; font-size: 20px; padding-top: 1px; padding-bottom: 1px; background-color: red;">BICYCLE</button>
+           </div>
+         </li>
+ 
+ 
+ 
+         <li class="nav-item">
+           <a class="nav-link active" aria-current="page" href="{% url 'shop:home' %}" style="margin-top: 40px; margin-left: 50px;">Home</a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'shop:bicycle' %}" style="margin-top: 40px; margin-left: 50px;">bicycle</a>
+        </li>
+
+ 
+         <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false" style="margin-top: 40px; margin-left: 50px;">
+             Category
+           </a>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <li><a class="dropdown-item" href="{% url 'shop:bicycle' %}">ALL products</a></li>
+             {% for link in links %}
+             <li><a class="dropdown-item" href="{{link.get_url}}">{{link.name}}</a></li>
+ 
+             {% endfor %}
+ 
+           </ul>
+         </li>
+       </ul>
+ 
+       <form class="d-flex" role="search" action="{% url 'searchapp:searchproduct' %}" method="GET">
+         <input class="form-control me-2 mt-3 mb-3" type="search"  name="q" placeholder="Search" aria-label="Search">
+ 
+         <a class="pt-4" href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="40"><path fill="yellow" d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg></a>  
+       </form>
+ 
+       <div class="d-flex">
+         {% if user.is_authenticated %}
+ 
+         <span class="text-light">{{user}}</span>
+         <a href="{% url 'auth:logout' %}" class="btn btn-outline-danger " type="button">Logout</a>
+         {% else %}
+         <a href="{% url 'auth:login' %}" class="btn btn-outline-light me-2" type="button">Login</a>
+         <a href="{% url 'auth:register' %}" class="btn btn-outline-light me-2" type="button">Signup</a>
+         
+         {% endif %}
+       </div>
+     </div>
+   </div>
+ </nav>

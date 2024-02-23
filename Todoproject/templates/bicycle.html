@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid mb-3">
+  {% if category %}
+ <h1 class="hed mt-5 mb-2">{{category.name}}</h1>
+ <img class="can rounded-5 " src="{{category.image.url}}" style="margin-left: 700px;" width="26%" height="450" alt="">
+ <h5 class="des mt-4 mb-5">{{category.desc}}</h5>
+ <link rel="stylesheet" href="{% static 'css\style.css' %}">
+ {% else %}
+ {% endif %}
+ 
+
+
+
+
+
+<div class="container-fluid mb-3">
+  <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 55px;">In Stock Bikes</h1>
+</div>
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card-group mb-3">
+      {% for i in products %}
+        {% if i.available %}
+        <a href="{% url 'shop:details' i.id %}">
+        <div class="cad border p-5 mb-5 bg-body rounded mb-4 me-2 shadow">
+          <img src="{{i.image.url}}" height="150px" class="card-img-top rounded-4 " alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <h5 class="card-text">${{i.price}}</h5>
+            <h6 class="card-text">{{i.category}}</h6>
+          </div>
+        </div>
+        </a>        
+        
+        {% endif %}
+        {% endfor %}
+
+
+{% endblock %}

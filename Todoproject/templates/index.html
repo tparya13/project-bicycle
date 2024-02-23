@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid mb-3">
+  {% if category %}
+ <h1 class="hed mt-5 mb-2">{{category.name}}</h1>
+ <img class="can rounded-5 " src="{{category.image.url}}" style="margin-left: 700px;" width="26%" height="450" alt="">
+ <h5 class="des mt-4 mb-5">{{category.desc}}</h5>
+ <link rel="stylesheet" href="{% static 'css\style.css' %}">
+ {% else %}
+</div>
+ 
+
+ <img class="can " src="../static/images/bycycle.jpg" style="margin-left: 300px;" width="65%" height="500" style="margin-top: 200px;" alt="">
+ {% endif %}
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card-group mb-3">
+      {% for i in products %}
+        {% if i.available %}
+        <a href="{% url 'shop:details' i.id %}">
+        <div class="cad border p-5 mb-5 bg-body rounded mb-4 me-2 shadow">
+          <img src="{{i.image.url}}" height="150px" class="card-img-top rounded-4 " alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <h5 class="card-text">${{i.price}}</h5>
+            <h6 class="card-text">{{i.category}}</h6>
+          </div>
+        </div>
+        </a>
+        
+        {% endif %}
+        {% endfor %}
+
+
+     
+      </div>
+</div>
+
+
+
+<div class="container-fluid mb-3">
+  <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 55px;">NEW TREK MODELS</h1>
+</div>
+
+
+
+
+<div class="rw row d-flex">
+<div class="col-lg-6 col-md-2 col-sm-12">                     
+  <img class=" " src="../static/images/kaaa.webp" width="590px" height="220px" style="margin-left:320px;" alt="...">
+</div>  
+<div class="col-lg-6 col-md-2 col-sm-12">
+  <img class=" " src="../static/images/byyyy.webp" width="570px" height="220px" alt="...">
+</div>  
+</div>
+
+<div class="rw row d-flex">
+<div class="col-lg-6 col-md-2 col-sm-12">
+<img class=" " src="../static/images/laaa.webp" width="590px" height="220px" style="margin-top:20px; margin-left: 320px;" alt="...">
+</div>  
+<div class="col-lg-6 col-md-2 col-sm-12">
+<img class=" " src="../static/images/maa.webp" width="570px" height="220px" style="margin-top:20px;" alt="...">
+</div>  
+</div>
+
+
+
+
+
+
+<div class="container"  style="margin-right: 1000px; margin-top: 40px;">
+  <img src="../static/images/WhyElectric.jpg"alt="">
+</div>
+
+
+<div class="container-fluid mb-3">
+  <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 40px;">PROFESSONAL SERVISES</h1>
+</div>
+
+
+<div class="rw row d-flex">
+  <div class="col-lg-4 col-md-2 col-sm-12">                     
+    <img class=" " src="../static/images/wheel5.jpg" width="600px" height="180px" alt="...">
+  </div>  
+  <div class="col-lg-4 col-md-2 col-sm-12">                     
+    <img class=" " src="../static/images/wheel6.jpg"  style="margin-left: 35px" width="600px" height="180px" alt="...">
+  </div> 
+  <div class="col-lg-4 col-md-2 col-sm-12">                     
+    <img class=" " src="../static/images/wheel3.webp" style="margin-left: 70px" width="600px" height="180px" alt="...">
+  </div> 
+</div>  
+
+
+
+
+
+<div class="container-fluid mt-5">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199525.66312872447!2d-90.62931050546875!3d38.612340900000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8caf65cc0089b%3A0xe73b343b5831ee5b!2sMaplewood%20Bicycle!5e0!3m2!1sen!2sin!4v1708661603464!5m2!1sen!2sin" width="2000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+
+<div class="container-fluid mb-3">
+  <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 45px;">- THE SHOP -</h1>
+</div>
+<h5 class="des mt-4 mb-5">
+  We are very proud to be part of our cycling community since 1973!</br>
+  We are bike geeks plain and simple. We love what we do. We sweat the details. </br>
+  We commute, we race, we ride with our kids, we ride charity events, we do multi-sport, we get dirty, we get bloody, and tomorrow we will wake up and do it all over again!</h5>
+  <div class="container-fluid mb-3">
+    <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 75px;">Join  Our  Team</h1>
+  </div>
+
+
+<div>
+    <button type="START HERE" class="btn btn-danger" style="margin-left: 800px; font-size: 35px; margin-bottom: 20px; margin-top: 20px;">START HERE</button>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,140 @@
+.des {
+  text-align: center;
+  margin-left: 84px;
+  margin-right: 100px;
+  font-style: oblique;
+}
+
+.hed {
+  text-align: center;
+}
+
+
+.card-group {
+  width: 100vw;
+  margin-left: 126px;
+
+}
+
+.card-group img {
+  width: 260px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+  padding-right: 60px;
+}
+
+.card-group a {
+  text-decoration: none;
+  color: black;
+}
+
+.col2 {
+  margin-top: 220px;
+
+}
+
+.coo {
+  color: green;
+
+}
+
+.col1 {
+  margin-top: 40px;
+
+}
+
+.cd {
+  height: 58vh;
+  width: 22vw;
+  margin-top: 130px;
+}
+
+.cd img {
+  width: 360px;
+}
+
+.conta {
+  height: 91vh
+}
+
+.card-group .cad {
+  width: 340px;
+}
+
+.sng {
+  margin-left: 720px;
+}
+
+.ann {
+  margin-right: 550px;
+}
+
+.sing {
+  margin-left: 700px;
+}
+
+.lgn {
+  width: 380px;
+  margin-left: 450px;
+}
+
+.sr {
+  background-color: white;
+  color: white;
+}
+
+.tbl {
+  margin-left: 350px;
+}
+
+.yr {
+  text-align: center;
+}
+
+.purch {
+  margin-left: 800px;
+  margin-bottom: 200px;
+}
+
+.cdd {
+  margin-left: 800px;
+
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.image-gallery {
+  width: 500px;
+  height: 300px;
+  overflow-x: hiden;
+  white-space: nowra
+}
+
+.image-gallery img {
+  width: 500px;
+  height: 100%;
+  margin-right: 10px;
+}
+
+
+
+.crtimg{
+  width: 390px;
+
+}
+.to{
+  margin-top: 30px;
+}
+.tt{
+  background-color: rgb(6, 241, 163);
+}
+.dss{
+  background-color: rgb(8, 221, 210);
+}
+
+.foot1{
+  width: 100vw;
+}

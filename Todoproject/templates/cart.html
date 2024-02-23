@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="rw row mt-4 mb-5">
+    <div class="col-lg-8 btn-light">
+        <h5 class="fr">from saved Address</h5>
+    {% for cartitem in cart %}
+    <div class="rrw row border w-100 shadow">
+        <div class="col-lg-4 col-md-3 col-sm-12">
+            <img class="crtimg mt-2 shadow" src="{{cartitem.product.image.url}}" alt="">
+
+            <h4 class="qt mt-4"><a href="{% url 'cartapp:removecart' cartitem.product.id %}"
+                class="btn">-</a>{{cartitem.quantity}}<a href="{% url 'cartapp:addcart' cartitem.product.id %}" class="btn">+</a>
+            </h4>
+        </div>
+        <div class="col-lg-8 border mt-2 mb-2">
+            <h5 class="pro mt-3">{{cartitem.product}}</h5>
+            <h6 class="des">{{cartitem.product.desc}}</h6>
+            <h4 class="pr">${{cartitem.product.price}}</h4>
+        </div>
+        <div class="col-lg-2">
+            <a href="{% url 'cartapp:fullremove' cartitem.product.id %}" class="cn btn btn-danger">Remove</a>
+        </div>
+    </div>
+    {% endfor %}
+    {% if cart %}
+    <a href="{% url 'shop:home' %}" class="purch btn btn-primary mt-3 pt-2 pb-2">
+        <h6>continue purchase</h6>
+    </a>   
+    </div>
+    <div class="to col-lg-4 fixed-end border">
+        <div class="pp row border">
+            <h3>PRICE DETAILS</h3>
+        </div>
+        <div class="cc col-lg-12">
+            <h4 class="ds mt-3">DISCOUNT<span class="dss mt-3">-$1020</span></h4>
+            <h4 class="TOT mt-5">TOTAL AMOUNT<span class="tt">-${{total}}</span></h4><hr>
+            <h5 class="sav">you will save $1,020 on this order</h5>
+        </div>
+        <a href="{% url 'cartapp:placeorder' %}" class="plac btn btn-warning pt-2 mb-3"><h4>placeorder</h4></a>
+        {% else %}
+        <a href="{% url 'shop:home' %}"><h5 class="prpr">please purchase your product</h5></a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

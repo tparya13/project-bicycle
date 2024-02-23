@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="conta container-fluid mb-3 justify-content-center  d-flex ">
+    <div class="card crd rounded-2  ms-4 w-50 me-4 mb-5 mt-3"style="border:0;">
+        <div class="row">
+            <h2 class="hed2">{{data.name}}</h2>
+            <div class="cd card shadow-lg p-3 mb-5 p-3 mb-5 bg-body rounded mb-4">
+                <img src="{{data.image.url}}" class="card-img-top rounded-2 ms-2 mt-3" alt="...">
+                <div class="card-body">
+                
+      
+                
+                </div>
+            </div>
+         
+
+
+                <div class="col2 col-5 ms-4">
+                    <h2>{{data.name}}</h2>
+                    <h5>{{data.desc}}</h5>
+                    <div class="coo">
+                    <h3>${{data.price}}</h3></div>
+                    <h5 class="ct mt-3">category: {{data.category}}</h5>    
+                    <h5>created date:{{data.created}}</h5> 
+                    <h5 class="up mb-4">updated date: {{data.updated}}</h5>   
+
+                    {% if data.stock >= 1 %}
+                    <a href="{% url 'cartapp:addcart' data.id %}" type="button" class="btn btn-warning me-3 p-2">Add to cart</a>
+                   
+                    {% else %}
+                    <span><h3 class="out" style="color: green;">out of stock</h3></span>
+                    {% endif %}
+            </div>
+          </div>
+    </div>
+        
+</div>
+
+{% endblock %} 
